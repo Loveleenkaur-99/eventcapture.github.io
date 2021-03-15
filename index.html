@@ -1,1 +1,58 @@
-hello
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<style>
+		html{
+			box-sizing: border-box;
+		}
+		*, *:before,*:after{
+			box-sizing: inherit;
+		}*
+		div{
+			width : 100%;
+			padding: 100px;
+		}
+		.one{
+			background: grey;
+		}
+		.two{
+			background: thistle;
+		}
+		.three{
+			background: mistyrose;
+		}
+	</style>
+
+	</head>
+	<body>
+		<div class ="one">
+			<div class = "two">
+				<div class ="three"></div>
+			</div>
+				</div>
+			<button>
+			</button>
+<script>
+	const divs = document.querySelectorAll('div');
+   const button = document.querySelector('button');
+
+     function logText(e) {
+     	console.log(this.classList.value);
+
+     }
+     divs.forEach(div => div.addEventListener('click',logText,{
+     	capture:false,
+     	once:true
+     }));
+     button.addEventListener('click' , () => {
+       console.log('click!!');},
+       { 
+       	once:true
+       });
+
+     
+
+</script>
+	</body>
+</html>
